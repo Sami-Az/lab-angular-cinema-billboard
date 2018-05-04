@@ -1,0 +1,22 @@
+<br>
+<h2>Movies List</h2>
+
+<p> {{movieTruc.currentCount}}</p>
+
+<section class="section">
+    
+<ul>
+  <li *ngFor="let oneMovie of  movieTruc.movies">
+        <h3>ROOM {{oneMovie.room}}</h3>
+        <br>
+        <img [src]="oneMovie.poster" alt="">
+        <br>
+        <p>{{oneMovie.title}}</p>
+        <br>
+        <a [routerLink]="['/movie', oneMovie.id]" id="details">See Details</a>
+        <hr>
+  </li>
+  
+</ul>
+
+</section>

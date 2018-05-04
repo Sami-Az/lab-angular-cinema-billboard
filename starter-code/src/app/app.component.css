@@ -1,0 +1,14 @@
+ header {
+  background-color: darkcyan;
+  height: 80px;
+ }
+ 
+ nav {
+   padding-top: 25px;
+ }
+
+ nav a {
+   color: wheat;
+   padding-top: 40px;
+   padding-left: 50px;
+ }

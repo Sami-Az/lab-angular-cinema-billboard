@@ -1,0 +1,25 @@
+<h2>Movie Details</h2>
+
+<h3></h3>
+
+<section class="section">
+<ul>
+  <h3>Room {{movieInfo?.room}}</h3>
+  <br>
+  <img [src]="movieInfo?.poster" alt="">
+  <p>Title: {{movieInfo?.title}}</p>
+  <hr>
+  <div class="details">
+      <p>Genre: {{movieInfo?.genres}}</p>
+      <p>Year: {{movieInfo?.year}}</p>
+      <p>Director: {{movieInfo?.director}}</p>
+      <p>Actor: {{movieInfo?.actors}}</p>
+
+  </div>
+  <hr>
+  <!-- <li>Email: {{movieInfo?.email}}</li> -->
+</ul>
+
+
+<button (click)="confirmBack()">Back</button>
+</section>

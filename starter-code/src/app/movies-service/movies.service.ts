@@ -1,4 +1,8 @@
-[
+import { Injectable } from '@angular/core';
+
+@Injectable()
+export class MoviesService {
+ movies: Array<Movie> = [
   {
     id: 1,
     title: "The Shawshank Redemption",
@@ -16,7 +20,9 @@
       "William Sadler",
       "Clancy Brown",
       "Gil Bellows"
-    ]
+    ],
+    hours: "Sunday 19:30, 22:30",
+    room: 1
   }, {
     id: 2,
     title: "The Godfather",
@@ -34,7 +40,9 @@
       "Richard S. Castellano",
       "Robert Duvall",
       "Sterling Hayden"
-    ]
+    ],
+    hours: "Thursday 15:30, 20:30",
+    room: 2
   }, {
     id: 3,
     title: "The Godfather Part II",
@@ -52,7 +60,9 @@
       "Robert De Niro",
       "John Cazale",
       "Talia Shire"
-    ]
+    ],
+    hours: "Monday 17:30, 22:30",
+    room: 3
   }, {
     id: 4,
     title: "The Dark Knight",
@@ -70,9 +80,11 @@
       "Michael Caine",
       "Maggie Gyllenhaal",
       "Gary Oldman"
-    ]
-  }, 
-  {
+    ],
+    hours: "Tuesday 20:30, 22:30",
+    room: 4
+  }, {
+  
     id: 5,
     title: "Schindler's List",
     poster: "https://i.imgur.com/IWZJOmu.jpg",
@@ -89,6 +101,44 @@
       "Caroline Goodall",
       "Jonathan Sagall",
       "Embeth Davidtz"
-    ]
+    ],
+    hours: "Wednesday 19:30, 22:30",
+    room: 5
   }
 ]
+
+  constructor() { }
+
+  getMovies() {
+    return this.movies;
+  }
+
+  getMovie(id) {
+    let movieInfo;
+    this.movies.forEach((oneMovie) => {
+      if(oneMovie.id.toString() === id) {
+        movieInfo = oneMovie;
+      }
+    });
+
+    return movieInfo;
+  }
+
+}
+
+
+export class Movie {
+  constructor (
+    public id: number,
+    public title: string,
+    public poster: string,
+    public synopsis: string,
+    public genres:  Array<string>,
+    public year: number,
+    public director: string,
+    public actors: Array<string>,
+    public hours: string,
+    public room: number
+    
+  ) { }
+}
